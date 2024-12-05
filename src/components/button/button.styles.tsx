@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const BaseButton = styled.button`
+type ChildrenProp = {
+  children: React.ReactNode;
+}
+
+export const BaseButton = styled.button<ChildrenProp>`
   min-width: 165px;
   width: auto;
   height: 50px;
