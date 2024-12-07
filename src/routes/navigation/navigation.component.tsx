@@ -1,5 +1,5 @@
-import { Fragment } from 'react';
-import { Outlet } from 'react-router-dom';
+import { FC, Fragment, RefAttributes } from 'react';
+import { LinkProps, Outlet } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 
 import CartIcon from '../../components/cart-icon/cart-icon.component';
@@ -18,6 +18,12 @@ import {
   LogoContainer,
 } from './navigation.styles';
 
+export type NavigationProps = {
+
+} & RefAttributes<HTMLAnchorElement>
+
+// FC<LinkProps & RefAttributes<HTMLAnchorElement>>
+
 const Navigation = () => {
   const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
@@ -35,7 +41,7 @@ const Navigation = () => {
           <NavLink to='/shop'>SHOP</NavLink>
 
           {currentUser ? (
-            <NavLink as='span' onClick={signOutUser}>
+            <NavLink as='span' onClick={signOutUser} to="/">
               SIGN OUT
             </NavLink>
           ) : (

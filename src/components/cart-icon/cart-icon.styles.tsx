@@ -1,6 +1,13 @@
+import { Dispatch } from 'react';
 import styled from 'styled-components';
+import { SetIsCartOpen } from '../../store/cart/cart.action';
 
-export const CartIconContainer = styled.div`
+type ChildrenProp = {
+  children?: React.ReactNode;
+  onClick: Dispatch<SetIsCartOpen>;
+}
+
+export const CartIconContainer = styled.div<ChildrenProp>`
   width: 45px;
   height: 45px;
   position: relative;

@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+// type ChildrenProp = {
+//   children?: React.ReactNode;
+// }
+
 export const NavigationContainer = styled.div`
   height: 70px;
   width: 100%;
